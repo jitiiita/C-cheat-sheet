@@ -30,8 +30,33 @@
   - Min
   - Max
   - Min_Element
-  - Max_Element
-
-## Minimum and Maximum
+  - Max_Elemen
+## Merge
   - Merge
-  - In place merge
+  - In-place merge
+
+## nth element
+  - Nth element
+
+## partition and stable partition
+  - partition and stable partition
+  - stable partition
+
+## for each
+  - for_each
+
+## Numeric algorithms
+  - Accumulate
+  - Adjacent difference
+  - Inner product
+  - Partial sum 
+  - Power
+
+## generate
+  - generate
+  - generate_n
+
+## Filling algorithms
+  - fill
+  - fill_n
+
