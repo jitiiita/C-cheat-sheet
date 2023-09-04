@@ -14,8 +14,10 @@
 
 ## 2. Sorting algorithms
   - sort
-          ```vector<int> v = {1,2,3,4,5,6,7,8,9};
-          sort(v.begin(), v.end(), compare);```
+          ```C++
+          vector<int> v = {1,2,3,4,5,6,7,8,9};
+          sort(v.begin(), v.end(), compare);
+          ```
   - stable_sort
   - partial_sort_copy 
   - partial_sort
