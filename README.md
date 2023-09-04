@@ -14,10 +14,14 @@
 
 ## 2. Sorting algorithms
   - sort
-          ```C++
+```c
+          int arr[N] = {4, 2, 6, 5, 8, 1, 7, 9};
+          sort(arr, arr + N);
+```
+```c
           vector<int> v = {1,2,3,4,5,6,7,8,9};
           sort(v.begin(), v.end(), compare);
-          ```
+```
   - stable_sort
   - partial_sort_copy 
   - partial_sort
