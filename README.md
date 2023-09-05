@@ -42,7 +42,7 @@
     - Description: Search for the first pair of adjacent elements in a specified range that satisfy a specified condition.
     - Example:
       ```c
-      auto it = std::adjacent_find(vec.begin(), vec.end(), [](int a, int b) { return b > a; });
+      auto it = std::adjacent_find(vec.begin(), vec.end());
       if (it != vec.end()) {
           std::cout << "First pair of adjacent equal elements found at position: " << std::distance(vec.begin(), it) << std::endl;
       } else {
@@ -63,6 +63,22 @@
         }
         ```
   - search_n
+    - Description: Search for a specific subsequence of elements within a specified range.
+    - Example:
+      ```c
+      std::vector<int> vec = {1, 2, 2, 3, 2, 4, 2, 5};
+      
+      int target_value = 2;
+      size_t consecutive_count = 3;
+  
+      auto it = std::search_n(vec.begin(), vec.end(), consecutive_count, target_value);
+  
+      if (it != vec.end()) {
+          std::cout << "Found a subsequence of " << consecutive_count << " consecutive " << target_value << " starting at position: " << std::distance(vec.begin(), it) << std::endl;
+      } else {
+          std::cout << "No subsequence of " << consecutive_count << " consecutive " << target_value << " found in 'vec'" << std::endl;
+      }
+      ``` 
   - binary_search
     - Description: Determines if a sorted range contains a specific element.
     - Example:
@@ -71,8 +87,43 @@
       bool found = std::binary_search(vec.begin(), vec.end(), 3);
       ```
   - equal_range
+    - Description: Find a range of elements in a sorted sequence that match a specified value or satisfy a given binary predicate
+    - Example:
+      ```c
+      std::vector<int> vec = {1, 2, 2, 3, 3, 3, 4, 5};
+      auto range = std::equal_range(vec.begin(), vec.end(), 3);
+      std::cout << "Occurrences of 3 in the range: [" << std::distance(vec.begin(), range.first) << ", " << std::distance(vec.begin(), range.second) << ")" << std::endl;
+      ```
   - lower_bound
+    - Description: Find the first element in a sorted sequence that is not less than a specified value or that satisfies a given binary predicate
+    - Example:
+      ```c
+      std::vector<int> vec = {1, 2, 3, 4, 5, 6, 7};
+
+      // Find the first element not less than 4 in 'vec'
+      auto it = std::lower_bound(vec.begin(), vec.end(), 4);
+  
+      if (it != vec.end()) {
+          std::cout << "First element not less than 4: " << *it << std::endl;
+      } else {
+          std::cout << "No element not less than 4 found in 'vec'" << std::endl;
+      }
+      ```
   - upper_bound
+    - Description: Find the first element in a sorted sequence that is greater than a specified value or that satisfies a given binary predicate.
+    - Example:
+      ```c
+      std::vector<int> vec = {1, 2, 3, 4, 5, 6, 7};
+  
+      // Find the first element greater than 4 in 'vec'
+      auto it = std::upper_bound(vec.begin(), vec.end(), 4);
+  
+      if (it != vec.end()) {
+          std::cout << "First element greater than 4: " << *it << std::endl;
+      } else {
+          std::cout << "No element greater than 4 found in 'vec'" << std::endl;
+      }
+      ```
 
 ## 2. Sorting algorithms
   - sort
