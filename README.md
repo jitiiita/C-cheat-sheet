@@ -26,7 +26,29 @@
       }
       ```
   - find_first_of
+    - Description: Search for the first occurrence of any element from a specified set of elements within a given range
+    - Example:
+      ```c
+      std::vector<int> vec = {1, 2, 3, 4, 5};
+      std::vector<int> targets = {3, 6, 7};
+      auto it = std::find_first_of(vec.begin(), vec.end(), targets.begin(), targets.end());
+      if (it != vec.end()) {
+          std::cout << "First element from 'targets' found at position: " << std::distance(vec.begin(), it) << std::endl;
+      } else {
+          std::cout << "No element from 'targets' found in 'vec'" << std::endl;
+      }
+      ```
   - adjacent_find
+    - Description: Search for the first pair of adjacent elements in a specified range that satisfy a specified condition.
+    - Example:
+      ```c
+      auto it = std::adjacent_find(vec.begin(), vec.end(), [](int a, int b) { return b > a; });
+      if (it != vec.end()) {
+          std::cout << "First pair of adjacent equal elements found at position: " << std::distance(vec.begin(), it) << std::endl;
+      } else {
+          std::cout << "No adjacent equal elements found in 'vec'" << std::endl;
+      }
+      ```
   - search
       - Description: Searches for a subsequence within a range.
       - Example:
@@ -135,8 +157,19 @@
 
 ## 17. Counting algorithms
   - count
+    - Description: Counts the number of occurrences of a specified element in a range.
+    - Example:
+      ```c
+      std::vector<int> vec = {1, 2, 2, 3, 2, 4};
+      int count = std::count(vec.begin(), vec.end(), 2);
+        ```
   - count_if
-
+    - Description: Counts the number of elements in a range that satisfy a given condition.
+    - Example:
+      ```c
+      std::vector<int> vec = {1, 2, 3, 4, 5};
+      int count = std::count_if(vec.begin(), vec.end(), [](int x) { return x % 2 == 0; });
+      ```
 ## 18. Randomizing algorithms
   - Random shuffle
 
