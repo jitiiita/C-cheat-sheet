@@ -2,26 +2,66 @@
 # STL algorithms
 ## 1. Searching algorithms
   - find
-  - find_end
+    - Description: Searches for a specified element in a range defined by two iterators.
+    - Example:
+        ```c
+        std::vector<int> vec = {1, 2, 3, 4, 5};
+        auto it = std::find(vec.begin(), vec.end(), 3);
+        if (it != vec.end()) {
+            // Element found
+        } else {
+            // Element not found
+        }
+        ```
+  - find_if
+    - Description: Searches for the first element in a range that satisfies a specified condition.
+    - Example:
+      ```c
+      std::vector<int> vec = {1, 2, 3, 4, 5};
+      auto it = std::find_if(vec.begin(), vec.end(), [](int x) { return x > 3; });
+      if (it != vec.end()) {
+          // Element satisfying the condition found
+      } else {
+          // Element not found
+      }
+      ```
   - find_first_of
   - adjacent_find
   - search
+      - Description: Searches for a subsequence within a range.
+      - Example:
+        ```c
+        std::vector<int> haystack = {1, 2, 3, 4, 5, 6};
+        std::vector<int> needle = {3, 4, 5};
+        auto it = std::search(haystack.begin(), haystack.end(), needle.begin(), needle.end());
+        if (it != haystack.end()) {
+            // Subsequence found
+        } else {
+            // Subsequence not found
+        }
+        ```
   - search_n
   - binary_search
+    - Description: Determines if a sorted range contains a specific element.
+    - Example:
+      ```c
+      std::vector<int> vec = {1, 2, 3, 4, 5};
+      bool found = std::binary_search(vec.begin(), vec.end(), 3);
+      ```
   - equal_range
   - lower_bound
   - upper_bound
 
 ## 2. Sorting algorithms
   - sort
-```c
-          int arr[N] = {4, 2, 6, 5, 8, 1, 7, 9};
-          sort(arr, arr + N);
-```
-```c
-          vector<int> v = {1,2,3,4,5,6,7,8,9};
-          sort(v.begin(), v.end(), compare);
-```
+    ```c
+        int arr[N] = {4, 2, 6, 5, 8, 1, 7, 9};
+        sort(arr, arr + N);
+    ```
+    ```c
+        vector<int> v = {1,2,3,4,5,6,7,8,9};
+        sort(v.begin(), v.end(), compare);
+      ```
   - stable_sort
   - partial_sort_copy 
   - partial_sort
