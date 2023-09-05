@@ -220,52 +220,168 @@
 
 ## 7. nth element
   - Nth element
+    - Description: 
+    - Example:
+    ```c
+    ```
 
 ## 8. Partition and Stable partition
   - partition and stable partition
+    - Description: 
+    - Example:
+    ```c
+    ```
   - stable partition
+    - Description: 
+    - Example:
+    ```c
+    ```
 
 ## 9. Removing algorithms
   - remove
+    - Description: 
+    - Example:
+    ```c
+    ```
   - remove_if
+    - Description: 
+    - Example:
+    ```c
+    ```
   - remove_copy
+    - Description: 
+    - Example:
+    ```c
+    ```
   - remove_copy_if
+    - Description: 
+    - Example:
+    ```c
+    ```
 
 ## 10. Replacing algorithms
   - replace
+    - Description: 
+    - Example:
+    ```c
+    ```
   - replace_if
+    - Description: 
+    - Example:
+    ```c
+    ```
   - replace_copy
+    - Description: 
+    - Example:
+    ```c
+    ```
   - replace_copy_if
+    - Description: 
+    - Example:
+    ```c
+    ```
 
 ## 11. for each
   - for_each
+    - Description: 
+    - Example:
+    ```c
+    ```
 
 ## 12. Numeric algorithms
   - Accumulate
+    - Description: 
+    - Example:
+    ```c
+    ```
   - Adjacent difference
+    - Description: 
+    - Example:
+    ```c
+    ```
   - Inner product
-  - Partial sum 
+    - Description: 
+    - Example:
+    ```c
+    ```
+  - Partial sum
+    - Description: 
+    - Example:
+    ```c
+    ```
   - Power
+    - Description: 
+    - Example:
+    ```c
+    ```
 
 ## 13. Generate algorithms
   - generate
+    - Description: 
+    - Example:
+    ```c
+    ```
   - generate_n
+    - Description: 
+    - Example:
+    ```c
+    ```
 
 ## 14. Filling algorithms
   - fill
+    - Description: 
+    - Example:
+    ```c
+    ```
   - fill_n
+    - Description: 
+    - Example:
+    ```c
+    ```
 
 ## 15. Copying algorithms
   - copy
+    - Description: 
+    - Example:
+    ```c
+    ```
   - copy_backward
+    - Description: 
+    - Example:
+    ```c
+    ```
   - copy_n
+    - Description: 
+    - Example:
+    ```c
+    ```
 
 ## 16. Heap algorithms
   - push_heap
+    - Description: 
+    - Example:
+    ```c
+    ```
   - pop_heap
+    - Description: 
+    - Example:
+    ```c
+    ```
   - make_heap
+    - Description: 
+    - Example:
+    ```c
+    ```
   - sort_heap
+    - Description: 
+    - Example:
+    ```c
+    ```
   - is_heap
+    - Description: 
+    - Example:
+    ```c
+    ```
 
 ## 17. Counting algorithms
   - count
@@ -284,29 +400,89 @@
       ```
 ## 18. Randomizing algorithms
   - Random shuffle
+    - Description: 
+    - Example:
+    ```c
+    ```
 
 ## 19. Comparing algorithms
   - Lexicographical compare
+    - Description: 
+    - Example:
+    ```c
+    ```
   - Equal and mismatch
+    - Description: 
+    - Example:
+    ```c
+    ```
 
 ## 20. Mismatch
   - Mismatch
+    - Description: 
+    - Example:
+    ```c
+    ```
 
 ## 21. Set algorithms
-  - includes 
-  - set difference 
-  - set intersection 
+  - includes
+    - Description: 
+    - Example:
+    ```c
+    ```
+  - set difference
+    - Description: 
+    - Example:
+    ```c
+    ```
+  - set intersection
+    - Description: 
+    - Example:
+    ```c
+    ```
   - set symmetric difference
+    - Description: 
+    - Example:
+    ```c
+    ```
   - set union
+    - Description: 
+    - Example:
+    ```c
+    ```
 
 ## 22. Swapping algorithms
   - iter swap
+    - Description: 
+    - Example:
+    ```c
+    ```
   - swap
+    - Description: 
+    - Example:
+    ```c
+    ```
   - swap_ranges
+    - Description: 
+    - Example:
+    ```c
+    ```
 
 ## 23. transform
   - Transform
+    - Description: 
+    - Example:
+    ```c
+    ```
 
 ## 24. unique
   - unique
+    - Description: 
+    - Example:
+    ```c
+    ```
   - unique_copy
+    - Description: 
+    - Example:
+    ```c
+    ```
