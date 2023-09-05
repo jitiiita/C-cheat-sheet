@@ -127,31 +127,75 @@
 
 ## 2. Sorting algorithms
   - sort
+    - Description: Sort elements in a given range
+    - Example:
     ```c
-        int arr[N] = {4, 2, 6, 5, 8, 1, 7, 9};
-        sort(arr, arr + N);
+    std::vector<int> numbers = {5, 2, 9, 1, 5, 6};
+    std::sort(numbers.begin(), numbers.end());
     ```
     ```c
-        vector<int> v = {1,2,3,4,5,6,7,8,9};
-        sort(v.begin(), v.end(), compare);
+      vector<int> v = {1,2,3,4,5,6,7,8,9};
+      sort(v.begin(), v.end(), compare);
       ```
   - stable_sort
-  - partial_sort_copy 
-  - partial_sort
+    - Description: Sort elements in a given range, just like std::sort.
+    - Example:
+    ```c
+    std::vector<int> numbers = {5, 2, 9, 1, 5, 6};
+    // Sort the elements in ascending order using std::stable_sort
+    std::stable_sort(numbers.begin(), numbers.end());
+    ```
 
 ## 3. Reversing
   - reverse
+    - Description: Reverse the order of elements in a specified range
+    - Example:
+    ```c
+    std::vector<int> numbers = {1, 2, 3, 4, 5};
+    std::reverse(numbers.begin(), numbers.end());
+    ```
   - reverse_copy
-    
+    - Description: create a reversed copy of a specified range of elements.
+    - Example:
+    ```c
+    std::vector<int> original = {1, 2, 3, 4, 5};
+    std::vector<int> reversed_copy(original.size());
+
+    // Create a reversed copy of the 'original' and store it in 'reversed_copy'
+    std::reverse_copy(original.begin(), original.end(), reversed_copy.begin());
+    ```
 ## 4. Rotating
   - rotate
+    - Description: 
+    - Example:
+    ```c
+    ```
   - rotate_copy
-
+    - Description: 
+    - Example:
+    ```c
+    ```
 ## 5. Minimum & Maximum
   - Min
+    - Description: 
+    - Example:
+    ```c
+    ```
   - Max
+    - Description: 
+    - Example:
+    ```c
+    ```
   - Min_Element
+    - Description: 
+    - Example:
+    ```c
+    ```
   - Max_Element
+    - Description: 
+    - Example:
+    ```c
+    ```
 
 ## 6. Merge
   - Merge
