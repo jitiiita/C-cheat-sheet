@@ -166,14 +166,31 @@
     ```
 ## 4. Rotating
   - rotate
-    - Description: 
+    - Description: Used to rotate the elements in a specified range
     - Example:
     ```c
+    std::vector<int> numbers = {1, 2, 3, 4, 5};
+    // Rotate the elements so that '3' becomes the new starting element
+    std::rotate(numbers.begin(), numbers.begin() + 2, numbers.end());
+    ```
+    ```c
+    std::list<int> numbers = {1, 2, 3, 4, 5};
+    // Rotate the elements so that '3' becomes the new starting element
+    std::rotate(numbers.begin(), std::next(numbers.begin(), 2), numbers.end());
     ```
   - rotate_copy
-    - Description: 
+    - Description: copying elements from a source range to a destination range with a rotation applied by using a combination of STL algorithms like std::copy, std::rotate, and iterators.
     - Example:
     ```c
+    std::vector<int> source = {1, 2, 3, 4, 5};
+    std::vector<int> destination(source.size());
+
+    // Define the position to start the rotation
+    size_t rotate_position = 2; // Rotate by 2 positions
+
+    // Perform the rotation and copy to the destination
+    std::rotate_copy(source.begin(), source.begin() + rotate_position, source.end(), destination.begin());
+
     ```
 ## 5. Minimum & Maximum
   - Min
