@@ -220,21 +220,30 @@
 
 ## 7. nth element
   - Nth element
-    - Description: 
+    - Description: Partially sort a range of elements such that the element at a specified position (the "nth" element) is in its correct sorted position, and all elements before it are less than or equal to it, and all elements after it are greater than or equal to it. 
     - Example:
     ```c
+    std::vector<int> numbers = {5, 2, 9, 1, 5, 6, 4, 7, 3};
+    // Find the 3rd smallest element using std::nth_element
+    std::nth_element(numbers.begin(), numbers.begin() + 2, numbers.end()); //3
     ```
 
 ## 8. Partition and Stable partition
   - partition and stable partition
-    - Description: 
+    - Description: Partition the elements of a container or range based on a given condition
     - Example:
     ```c
+    std::vector<int> numbers = {1, 2, 3, 4, 5, 6};
+    auto isEven = [](int x) { return x % 2 == 0; };
+    std::partition(numbers.begin(), numbers.end(), isEven);
     ```
   - stable partition
-    - Description: 
+    - Description: Separates elements into two groups based on a condition.
     - Example:
     ```c
+    std::vector<int> numbers = {1, 2, 3, 4, 5, 6};
+    auto isEven = [](int x) { return x % 2 == 0; };
+    std::stable_partition(numbers.begin(), numbers.end(), isEven);
     ```
 
 ## 9. Removing algorithms
@@ -283,9 +292,12 @@
 
 ## 11. for each
   - for_each
-    - Description: 
+    - Description: Used to apply a specified function or functor to each element within a given range or container.
     - Example:
     ```c
+    std::vector<int> numbers = {1, 2, 3, 4, 5};
+    // Use a lambda function to square and print each element
+    std::for_each(numbers.begin(), numbers.end(), [](int x) { std::cout << x * x << " "; });
     ```
 
 ## 12. Numeric algorithms
@@ -426,29 +438,60 @@
 
 ## 21. Set algorithms
   - includes
-    - Description: 
+    - Description: Used to check whether one range of elements is a subset of another range. It determines whether all elements in the first range are also present in the second range. 
     - Example:
     ```c
+    std::vector<int> mainList = {1, 2, 3, 4, 5, 6};
+    std::vector<int> subList = {2, 4, 6};
+
+    // Check if 'subList' is a subset of 'mainList'
+    bool isSubset = std::includes(mainList.begin(), mainList.end(), subList.begin(), subList.end());
     ```
-  - set difference
-    - Description: 
+  - set_difference
+    - Description: Used to compute the set difference between two sorted ranges. It finds the elements that are present in the first range but not in the second range and stores them in a destination range. 
     - Example:
     ```c
+    std::vector<int> firstRange = {1, 2, 3, 4, 5};
+    std::vector<int> secondRange = {3, 4, 5, 6, 7};
+    std::vector<int> difference;
+
+    // Compute the set difference between 'firstRange' and 'secondRange'
+    std::set_difference(firstRange.begin(), firstRange.end(), secondRange.begin(), secondRange.end(), std::back_inserter(difference)); //output will be: 1 2.
     ```
-  - set intersection
-    - Description: 
+  - set_intersection
+    - Description: Used to compute the set intersection between two sorted ranges. It finds the elements that are common to both ranges and stores them in a destination range. 
     - Example:
     ```c
+    std::vector<int> firstRange = {1, 2, 3, 4, 5};
+    std::vector<int> secondRange = {3, 4, 5, 6, 7};
+    std::vector<int> intersection;
+
+    // Compute the set intersection between 'firstRange' and 'secondRange'
+    std::set_intersection(firstRange.begin(), firstRange.end(), secondRange.begin(), secondRange.end(), std::back_inserter(intersection));//output will be: 3 4 5.
     ```
-  - set symmetric difference
-    - Description: 
+  - set_symmetric_difference
+    - Description: Used to compute the symmetric difference between two sorted ranges. The symmetric difference contains elements that are present in either of the two ranges but not in their intersection
     - Example:
     ```c
+    std::vector<int> firstRange = {1, 2, 3, 4, 5};
+    std::vector<int> secondRange = {3, 4, 5, 6, 7};
+    std::vector<int> symmetricDifference;
+
+    // Compute the set symmetric difference between 'firstRange' and 'secondRange'
+    std::set_symmetric_difference(firstRange.begin(), firstRange.end(), secondRange.begin(), secondRange.end(), std::back_inserter(symmetricDifference));
+
     ```
-  - set union
-    - Description: 
+  - set_union
+    - Description: Used to compute the set union of two sorted ranges. It combines the elements from both ranges into a single sorted range without any duplicates.
     - Example:
     ```c
+    std::vector<int> firstRange = {1, 2, 3, 4, 5};
+    std::vector<int> secondRange = {3, 4, 5, 6, 7};
+    std::vector<int> unionResult;
+
+    // Compute the set union between 'firstRange' and 'secondRange'
+    std::set_union(firstRange.begin(), firstRange.end(), secondRange.begin(), secondRange.end(), std::back_inserter(unionResult)); //output will be: 1 2 3 4 5 6 7.
+
     ```
 
 ## 22. Swapping algorithms
