@@ -430,9 +430,15 @@
 
 ## 20. Mismatch
   - Mismatch
-    - Description: 
+    - Description: Used to find the first pair of elements in two ranges that do not match
     - Example:
     ```c
+    std::vector<int> firstRange = {1, 2, 3, 4, 5};
+    std::vector<int> secondRange = {1, 2, 6, 4, 5};
+
+    // Find the first pair of elements that do not match between 'firstRange' and 'secondRange'
+    auto mismatchPair = std::mismatch(firstRange.begin(), firstRange.end(), secondRange.begin());
+    // First mismatch: 3 in firstRange and 6 in secondRange.
     ```
 
 ## 21. Set algorithms
