@@ -524,7 +524,7 @@
 
     // Use std::transform to square each element and store the result in 'squaredNumbers'
     std::transform(numbers.begin(), numbers.end(), std::back_inserter(squaredNumbers), [](int x) { return x * x; });
-
+    // output will be: 1 4 9 16 25.
     ```
 
 ## 24. unique
@@ -536,7 +536,7 @@
     // Remove consecutive duplicates from the 'numbers' vector
     auto newEnd = std::unique(numbers.begin(), numbers.end());
     // Resize the vector to contain only unique elements
-    numbers.resize(std::distance(numbers.begin(), newEnd));
+    numbers.resize(std::distance(numbers.begin(), newEnd)); //1 2 3 4 5.
     ```
   - unique_copy
     - Description: Used to create a copy of a range while eliminating consecutive duplicate elements
@@ -546,5 +546,5 @@
     std::vector<int> uniqueNumbers;
 
     // Create a copy of 'numbers' with consecutive duplicates removed
-    std::unique_copy(numbers.begin(), numbers.end(), std::back_inserter(uniqueNumbers));
+    std::unique_copy(numbers.begin(), numbers.end(), std::back_inserter(uniqueNumbers)); //1 2 3 4 5.
     ```
