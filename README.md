@@ -456,7 +456,8 @@
     std::vector<int> difference;
 
     // Compute the set difference between 'firstRange' and 'secondRange'
-    std::set_difference(firstRange.begin(), firstRange.end(), secondRange.begin(), secondRange.end(), std::back_inserter(difference)); //output will be: 1 2.
+    std::set_difference(firstRange.begin(), firstRange.end(), secondRange.begin(), secondRange.end(), std::back_inserter(difference));
+    //output will be: 1 2.
     ```
   - set_intersection
     - Description: Used to compute the set intersection between two sorted ranges. It finds the elements that are common to both ranges and stores them in a destination range. 
@@ -467,7 +468,8 @@
     std::vector<int> intersection;
 
     // Compute the set intersection between 'firstRange' and 'secondRange'
-    std::set_intersection(firstRange.begin(), firstRange.end(), secondRange.begin(), secondRange.end(), std::back_inserter(intersection));//output will be: 3 4 5.
+    std::set_intersection(firstRange.begin(), firstRange.end(), secondRange.begin(), secondRange.end(), std::back_inserter(intersection));
+    //output will be: 3 4 5.
     ```
   - set_symmetric_difference
     - Description: Used to compute the symmetric difference between two sorted ranges. The symmetric difference contains elements that are present in either of the two ranges but not in their intersection
@@ -479,7 +481,7 @@
 
     // Compute the set symmetric difference between 'firstRange' and 'secondRange'
     std::set_symmetric_difference(firstRange.begin(), firstRange.end(), secondRange.begin(), secondRange.end(), std::back_inserter(symmetricDifference));
-
+    // output will be: 1 2 6 7.
     ```
   - set_union
     - Description: Used to compute the set union of two sorted ranges. It combines the elements from both ranges into a single sorted range without any duplicates.
@@ -490,7 +492,8 @@
     std::vector<int> unionResult;
 
     // Compute the set union between 'firstRange' and 'secondRange'
-    std::set_union(firstRange.begin(), firstRange.end(), secondRange.begin(), secondRange.end(), std::back_inserter(unionResult)); //output will be: 1 2 3 4 5 6 7.
+    std::set_union(firstRange.begin(), firstRange.end(), secondRange.begin(), secondRange.end(), std::back_inserter(unionResult));
+    //output will be: 1 2 3 4 5 6 7.
 
     ```
 
@@ -513,19 +516,35 @@
 
 ## 23. transform
   - Transform
-    - Description: 
+    - Description: used to apply a specified operation or function to each element within a given range or container and store the results in another range or container
     - Example:
     ```c
+    std::vector<int> numbers = {1, 2, 3, 4, 5};
+    std::vector<int> squaredNumbers;
+
+    // Use std::transform to square each element and store the result in 'squaredNumbers'
+    std::transform(numbers.begin(), numbers.end(), std::back_inserter(squaredNumbers), [](int x) { return x * x; });
+
     ```
 
 ## 24. unique
   - unique
-    - Description: 
+    - Description: Used to remove consecutive duplicate elements from a sorted range or container.
     - Example:
     ```c
+    std::vector<int> numbers = {1, 2, 2, 3, 3, 3, 4, 4, 5, 5};
+    // Remove consecutive duplicates from the 'numbers' vector
+    auto newEnd = std::unique(numbers.begin(), numbers.end());
+    // Resize the vector to contain only unique elements
+    numbers.resize(std::distance(numbers.begin(), newEnd));
     ```
   - unique_copy
-    - Description: 
+    - Description: Used to create a copy of a range while eliminating consecutive duplicate elements
     - Example:
     ```c
+    std::vector<int> numbers = {1, 2, 2, 3, 3, 3, 4, 4, 5, 5};
+    std::vector<int> uniqueNumbers;
+
+    // Create a copy of 'numbers' with consecutive duplicates removed
+    std::unique_copy(numbers.begin(), numbers.end(), std::back_inserter(uniqueNumbers));
     ```
