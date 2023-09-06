@@ -492,25 +492,40 @@
   
       // Compute the set union between 'firstRange' and 'secondRange'
       std::set_union(firstRange.begin(), firstRange.end(), secondRange.begin(), secondRange.end(), std::back_inserter(unionResult));
-      //output will be: 1 2 3 4 5 6 7.
+      // output will be: 1 2 3 4 5 6 7.
       ```
 
 ## 22. Swapping algorithms
   - iter swap
-    - Description: 
-    - Example:
-    ```c
-    ```
+    - Description: Used to swap the values of two elements pointed to by iterators.
+    - Example: 
+      ```c
+      std::vector<int> numbers = {1, 2, 3, 4};
+      // Swap the second and third elements using std::iter_swap
+      std::iter_swap(numbers.begin() + 1, numbers.begin() + 2); // output will be: 1 3 2 4.
+      ```
   - swap
-    - Description: 
+    - Description: Used to swap the values of two objects or variables of the same type. 
     - Example:
-    ```c
-    ```
+      ```c
+      int x = 5;
+      int y = 10;
+  
+      // Swap the values of x and y using std::swap
+      std::swap(x, y); // x = 10, y = 5
+      ```
   - swap_ranges
-    - Description: 
+    - Description: Used to swap the elements of two ranges of equal length. It swaps each element in the first range with the corresponding element in the second range.
     - Example:
-    ```c
-    ```
+      ```c
+      std::vector<int> firstRange = {1, 2, 3};
+      std::vector<int> secondRange = {4, 5, 6};
+
+      // Swap the elements of 'firstRange' with the elements of 'secondRange'
+      std::swap_ranges(firstRange.begin(), firstRange.end(), secondRange.begin());
+      // firstRange: 4 5 6
+      // secondRange: 1 2 3
+      ```
 
 ## 23. transform
   - Transform
