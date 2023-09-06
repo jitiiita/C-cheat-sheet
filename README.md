@@ -129,69 +129,68 @@
   - sort
     - Description: Sort elements in a given range
     - Example:
-    ```c
-    std::vector<int> numbers = {5, 2, 9, 1, 5, 6};
-    std::sort(numbers.begin(), numbers.end());
-    ```
-    ```c
+      ```c
+      std::vector<int> numbers = {5, 2, 9, 1, 5, 6};
+      std::sort(numbers.begin(), numbers.end());
+      ```
+      ```c
       vector<int> v = {1,2,3,4,5,6,7,8,9};
       sort(v.begin(), v.end(), compare);
       ```
   - stable_sort
     - Description: Sort elements in a given range, just like std::sort.
     - Example:
-    ```c
-    std::vector<int> numbers = {5, 2, 9, 1, 5, 6};
-    // Sort the elements in ascending order using std::stable_sort
-    std::stable_sort(numbers.begin(), numbers.end());
-    ```
+      ```c
+      std::vector<int> numbers = {5, 2, 9, 1, 5, 6};
+      // Sort the elements in ascending order using std::stable_sort
+      std::stable_sort(numbers.begin(), numbers.end());
+      ```
 
 ## 3. Reversing
   - reverse
     - Description: Reverse the order of elements in a specified range
     - Example:
-    ```c
-    std::vector<int> numbers = {1, 2, 3, 4, 5};
-    std::reverse(numbers.begin(), numbers.end());
-    ```
+      ```c
+      std::vector<int> numbers = {1, 2, 3, 4, 5};
+      std::reverse(numbers.begin(), numbers.end());
+      ```
   - reverse_copy
     - Description: create a reversed copy of a specified range of elements.
     - Example:
-    ```c
-    std::vector<int> original = {1, 2, 3, 4, 5};
-    std::vector<int> reversed_copy(original.size());
-
-    // Create a reversed copy of the 'original' and store it in 'reversed_copy'
-    std::reverse_copy(original.begin(), original.end(), reversed_copy.begin());
-    ```
+      ```c
+      std::vector<int> original = {1, 2, 3, 4, 5};
+      std::vector<int> reversed_copy(original.size());
+  
+      // Create a reversed copy of the 'original' and store it in 'reversed_copy'
+      std::reverse_copy(original.begin(), original.end(), reversed_copy.begin());
+      ```
 ## 4. Rotating
   - rotate
     - Description: Used to rotate the elements in a specified range
     - Example:
-    ```c
-    std::vector<int> numbers = {1, 2, 3, 4, 5};
-    // Rotate the elements so that '3' becomes the new starting element
-    std::rotate(numbers.begin(), numbers.begin() + 2, numbers.end());
-    ```
-    ```c
-    std::list<int> numbers = {1, 2, 3, 4, 5};
-    // Rotate the elements so that '3' becomes the new starting element
-    std::rotate(numbers.begin(), std::next(numbers.begin(), 2), numbers.end());
-    ```
+      ```c
+      std::vector<int> numbers = {1, 2, 3, 4, 5};
+      // Rotate the elements so that '3' becomes the new starting element
+      std::rotate(numbers.begin(), numbers.begin() + 2, numbers.end());
+      ```
+      ```c
+      std::list<int> numbers = {1, 2, 3, 4, 5};
+      // Rotate the elements so that '3' becomes the new starting element
+      std::rotate(numbers.begin(), std::next(numbers.begin(), 2), numbers.end());
+      ```
   - rotate_copy
     - Description: copying elements from a source range to a destination range with a rotation applied by using a combination of STL algorithms like std::copy, std::rotate, and iterators.
     - Example:
-    ```c
-    std::vector<int> source = {1, 2, 3, 4, 5};
-    std::vector<int> destination(source.size());
-
-    // Define the position to start the rotation
-    size_t rotate_position = 2; // Rotate by 2 positions
-
-    // Perform the rotation and copy to the destination
-    std::rotate_copy(source.begin(), source.begin() + rotate_position, source.end(), destination.begin());
-
-    ```
+      ```c
+      std::vector<int> source = {1, 2, 3, 4, 5};
+      std::vector<int> destination(source.size());
+  
+      // Define the position to start the rotation
+      size_t rotate_position = 2; // Rotate by 2 positions
+  
+      // Perform the rotation and copy to the destination
+      std::rotate_copy(source.begin(), source.begin() + rotate_position, source.end(), destination.begin());
+      ```
 ## 5. Minimum & Maximum
   - Min
     - Description: 
@@ -222,11 +221,11 @@
   - Nth element
     - Description: Partially sort a range of elements such that the element at a specified position (the "nth" element) is in its correct sorted position, and all elements before it are less than or equal to it, and all elements after it are greater than or equal to it. 
     - Example:
-    ```c
-    std::vector<int> numbers = {5, 2, 9, 1, 5, 6, 4, 7, 3};
-    // Find the 3rd smallest element using std::nth_element
-    std::nth_element(numbers.begin(), numbers.begin() + 2, numbers.end()); //3
-    ```
+      ```c
+      std::vector<int> numbers = {5, 2, 9, 1, 5, 6, 4, 7, 3};
+      // Find the 3rd smallest element using std::nth_element
+      std::nth_element(numbers.begin(), numbers.begin() + 2, numbers.end()); //3
+      ```
 
 ## 8. Partition and Stable partition
   - partition and stable partition
@@ -240,11 +239,11 @@
   - stable partition
     - Description: Separates elements into two groups based on a condition.
     - Example:
-    ```c
-    std::vector<int> numbers = {1, 2, 3, 4, 5, 6};
-    auto isEven = [](int x) { return x % 2 == 0; };
-    std::stable_partition(numbers.begin(), numbers.end(), isEven);
-    ```
+      ```c
+      std::vector<int> numbers = {1, 2, 3, 4, 5, 6};
+      auto isEven = [](int x) { return x % 2 == 0; };
+      std::stable_partition(numbers.begin(), numbers.end(), isEven);
+      ```
 
 ## 9. Removing algorithms
   - remove
@@ -294,11 +293,11 @@
   - for_each
     - Description: Used to apply a specified function or functor to each element within a given range or container.
     - Example:
-    ```c
-    std::vector<int> numbers = {1, 2, 3, 4, 5};
-    // Use a lambda function to square and print each element
-    std::for_each(numbers.begin(), numbers.end(), [](int x) { std::cout << x * x << " "; });
-    ```
+      ```c
+      std::vector<int> numbers = {1, 2, 3, 4, 5};
+      // Use a lambda function to square and print each element
+      std::for_each(numbers.begin(), numbers.end(), [](int x) { std::cout << x * x << " "; });
+      ```
 
 ## 12. Numeric algorithms
   - Accumulate
@@ -440,62 +439,61 @@
   - includes
     - Description: Used to check whether one range of elements is a subset of another range. It determines whether all elements in the first range are also present in the second range. 
     - Example:
-    ```c
-    std::vector<int> mainList = {1, 2, 3, 4, 5, 6};
-    std::vector<int> subList = {2, 4, 6};
-
-    // Check if 'subList' is a subset of 'mainList'
-    bool isSubset = std::includes(mainList.begin(), mainList.end(), subList.begin(), subList.end());
-    ```
+      ```c
+      std::vector<int> mainList = {1, 2, 3, 4, 5, 6};
+      std::vector<int> subList = {2, 4, 6};
+  
+      // Check if 'subList' is a subset of 'mainList'
+      bool isSubset = std::includes(mainList.begin(), mainList.end(), subList.begin(), subList.end());
+      ```
   - set_difference
     - Description: Used to compute the set difference between two sorted ranges. It finds the elements that are present in the first range but not in the second range and stores them in a destination range. 
     - Example:
-    ```c
-    std::vector<int> firstRange = {1, 2, 3, 4, 5};
-    std::vector<int> secondRange = {3, 4, 5, 6, 7};
-    std::vector<int> difference;
-
-    // Compute the set difference between 'firstRange' and 'secondRange'
-    std::set_difference(firstRange.begin(), firstRange.end(), secondRange.begin(), secondRange.end(), std::back_inserter(difference));
-    //output will be: 1 2.
-    ```
+      ```c
+      std::vector<int> firstRange = {1, 2, 3, 4, 5};
+      std::vector<int> secondRange = {3, 4, 5, 6, 7};
+      std::vector<int> difference;
+  
+      // Compute the set difference between 'firstRange' and 'secondRange'
+      std::set_difference(firstRange.begin(), firstRange.end(), secondRange.begin(), secondRange.end(), std::back_inserter(difference));
+      //output will be: 1 2.
+      ```
   - set_intersection
     - Description: Used to compute the set intersection between two sorted ranges. It finds the elements that are common to both ranges and stores them in a destination range. 
     - Example:
-    ```c
-    std::vector<int> firstRange = {1, 2, 3, 4, 5};
-    std::vector<int> secondRange = {3, 4, 5, 6, 7};
-    std::vector<int> intersection;
-
-    // Compute the set intersection between 'firstRange' and 'secondRange'
-    std::set_intersection(firstRange.begin(), firstRange.end(), secondRange.begin(), secondRange.end(), std::back_inserter(intersection));
-    //output will be: 3 4 5.
-    ```
+      ```c
+      std::vector<int> firstRange = {1, 2, 3, 4, 5};
+      std::vector<int> secondRange = {3, 4, 5, 6, 7};
+      std::vector<int> intersection;
+  
+      // Compute the set intersection between 'firstRange' and 'secondRange'
+      std::set_intersection(firstRange.begin(), firstRange.end(), secondRange.begin(), secondRange.end(), std::back_inserter(intersection));
+      //output will be: 3 4 5.
+      ```
   - set_symmetric_difference
     - Description: Used to compute the symmetric difference between two sorted ranges. The symmetric difference contains elements that are present in either of the two ranges but not in their intersection
     - Example:
-    ```c
-    std::vector<int> firstRange = {1, 2, 3, 4, 5};
-    std::vector<int> secondRange = {3, 4, 5, 6, 7};
-    std::vector<int> symmetricDifference;
-
-    // Compute the set symmetric difference between 'firstRange' and 'secondRange'
-    std::set_symmetric_difference(firstRange.begin(), firstRange.end(), secondRange.begin(), secondRange.end(), std::back_inserter(symmetricDifference));
-    // output will be: 1 2 6 7.
+      ```c
+      std::vector<int> firstRange = {1, 2, 3, 4, 5};
+      std::vector<int> secondRange = {3, 4, 5, 6, 7};
+      std::vector<int> symmetricDifference;
+  
+      // Compute the set symmetric difference between 'firstRange' and 'secondRange'
+      std::set_symmetric_difference(firstRange.begin(), firstRange.end(), secondRange.begin(), secondRange.end(), std::back_inserter(symmetricDifference));
+      // output will be: 1 2 6 7.
     ```
   - set_union
     - Description: Used to compute the set union of two sorted ranges. It combines the elements from both ranges into a single sorted range without any duplicates.
     - Example:
-    ```c
-    std::vector<int> firstRange = {1, 2, 3, 4, 5};
-    std::vector<int> secondRange = {3, 4, 5, 6, 7};
-    std::vector<int> unionResult;
-
-    // Compute the set union between 'firstRange' and 'secondRange'
-    std::set_union(firstRange.begin(), firstRange.end(), secondRange.begin(), secondRange.end(), std::back_inserter(unionResult));
-    //output will be: 1 2 3 4 5 6 7.
-
-    ```
+      ```c
+      std::vector<int> firstRange = {1, 2, 3, 4, 5};
+      std::vector<int> secondRange = {3, 4, 5, 6, 7};
+      std::vector<int> unionResult;
+  
+      // Compute the set union between 'firstRange' and 'secondRange'
+      std::set_union(firstRange.begin(), firstRange.end(), secondRange.begin(), secondRange.end(), std::back_inserter(unionResult));
+      //output will be: 1 2 3 4 5 6 7.
+      ```
 
 ## 22. Swapping algorithms
   - iter swap
@@ -518,33 +516,33 @@
   - Transform
     - Description: used to apply a specified operation or function to each element within a given range or container and store the results in another range or container
     - Example:
-    ```c
-    std::vector<int> numbers = {1, 2, 3, 4, 5};
-    std::vector<int> squaredNumbers;
-
-    // Use std::transform to square each element and store the result in 'squaredNumbers'
-    std::transform(numbers.begin(), numbers.end(), std::back_inserter(squaredNumbers), [](int x) { return x * x; });
-    // output will be: 1 4 9 16 25.
-    ```
+      ```c
+      std::vector<int> numbers = {1, 2, 3, 4, 5};
+      std::vector<int> squaredNumbers;
+  
+      // Use std::transform to square each element and store the result in 'squaredNumbers'
+      std::transform(numbers.begin(), numbers.end(), std::back_inserter(squaredNumbers), [](int x) { return x * x; });
+      // output will be: 1 4 9 16 25.
+      ```
 
 ## 24. unique
   - unique
     - Description: Used to remove consecutive duplicate elements from a sorted range or container.
     - Example:
-    ```c
-    std::vector<int> numbers = {1, 2, 2, 3, 3, 3, 4, 4, 5, 5};
-    // Remove consecutive duplicates from the 'numbers' vector
-    auto newEnd = std::unique(numbers.begin(), numbers.end());
-    // Resize the vector to contain only unique elements
-    numbers.resize(std::distance(numbers.begin(), newEnd)); //1 2 3 4 5.
-    ```
+      ```c
+      std::vector<int> numbers = {1, 2, 2, 3, 3, 3, 4, 4, 5, 5};
+      // Remove consecutive duplicates from the 'numbers' vector
+      auto newEnd = std::unique(numbers.begin(), numbers.end());
+      // Resize the vector to contain only unique elements
+      numbers.resize(std::distance(numbers.begin(), newEnd)); //1 2 3 4 5.
+      ```
   - unique_copy
     - Description: Used to create a copy of a range while eliminating consecutive duplicate elements
     - Example:
-    ```c
-    std::vector<int> numbers = {1, 2, 2, 3, 3, 3, 4, 4, 5, 5};
-    std::vector<int> uniqueNumbers;
-
-    // Create a copy of 'numbers' with consecutive duplicates removed
-    std::unique_copy(numbers.begin(), numbers.end(), std::back_inserter(uniqueNumbers)); //1 2 3 4 5.
-    ```
+      ```c
+      std::vector<int> numbers = {1, 2, 2, 3, 3, 3, 4, 4, 5, 5};
+      std::vector<int> uniqueNumbers;
+  
+      // Create a copy of 'numbers' with consecutive duplicates removed
+      std::unique_copy(numbers.begin(), numbers.end(), std::back_inserter(uniqueNumbers)); //1 2 3 4 5.
+      ```
