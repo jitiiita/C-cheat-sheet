@@ -215,7 +215,31 @@
 
 ## 6. Merge
   - Merge
+    - Description: used to merge two sorted ranges into a single sorted range. 
+    - Example:
+    ```c
+    std::vector<int> firstRange = {1, 3, 5, 7};
+    std::vector<int> secondRange = {2, 4, 6, 8};
+    std::vector<int> mergedResult(8); // The destination vector with enough space
+
+    // Merge the two sorted ranges into 'mergedResult'
+    std::merge(firstRange.begin(), firstRange.end(), secondRange.begin(), secondRange.end(), mergedResult.begin());
+    // 1 2 3 4 5 6 7 8.
+    ```
   - In-place merge
+    - Description: This algorithm reorders the elements in a single sorted range in such a way that they form a merged, sorted range within the original range.
+    - Example:
+    ```c
+    std::vector<int> numbers = {3, 1, 4, 1, 5, 9, 2, 6, 5, 3, 5};
+
+    // Sort the 'numbers' vector in ascending order
+    std::sort(numbers.begin(), numbers.begin() + 4);
+    std::sort(numbers.begin() + 5, numbers.end());
+
+    // Perform an in-place merge to create a single sorted range
+    std::inplace_merge(numbers.begin(), numbers.begin() + 5, numbers.end());
+    //1 1 2 3 3 4 5 5 5 6 9 
+    ```
 
 ## 7. nth element
   - Nth element
