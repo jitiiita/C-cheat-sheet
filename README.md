@@ -193,24 +193,42 @@
       ```
 ## 5. Minimum & Maximum
   - Min
-    - Description: 
+    - Description: Used to determine the minimum value among two or more values.
     - Example:
     ```c
+    int x = 5;
+    int y = 3;
+
+    // Find the minimum of x and y
+    int minValue = std::min(x, y); // 3
     ```
   - Max
-    - Description: 
+    - Description: used to determine the maximum value among two or more values
     - Example:
     ```c
+    int x = 5;
+    int y = 3;
+
+    // Find the minimum of x and y
+    int minValue = std::max(x, y); // 5
     ```
-  - Min_Element
-    - Description: 
+  - min_Element
+    - Description: used to find the smallest element in a given range
     - Example:
     ```c
+    std::vector<int> numbers = {5, 2, 8, 1, 6, 4, 7, 3};
+
+    // Find the smallest element in the 'numbers' vector
+    auto minElement = std::min_element(numbers.begin(), numbers.end()); // Smallest element: 1
     ```
-  - Max_Element
-    - Description: 
+  - max_Element
+    - Description: used to find the largest element in a given range.
     - Example:
     ```c
+    std::vector<int> numbers = {5, 2, 8, 1, 6, 4, 7, 3};
+
+    // Find the largest element in the 'numbers' vector
+    auto maxElement = std::max_element(numbers.begin(), numbers.end()); // Largest element: 8
     ```
 
 ## 6. Merge
