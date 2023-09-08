@@ -289,24 +289,49 @@
 
 ## 9. Removing algorithms
   - remove
-    - Description: 
+    - Description: Used to remove all elements equal to a specified value from a range. It does not actually erase the elements from the container but rather moves them to the end of the range and returns an iterator pointing to the new end.
     - Example:
     ```c
+    std::vector<int> numbers = {1, 2, 3, 4, 3, 5};
+
+    // Remove all elements equal to 3
+    auto newEnd = std::remove(numbers.begin(), numbers.end(), 3);
+
+    // Erase the removed elements
+    numbers.erase(newEnd, numbers.end());
     ```
   - remove_if
-    - Description: 
+    - Description: used to remove elements from a range that satisfy a certain predicate or condition.
     - Example:
     ```c
+    std::vector<int> numbers = {1, 2, 3, 4, 5, 6};
+
+    // Remove all odd numbers
+    auto newEnd = std::remove_if(numbers.begin(), numbers.end(), [](int num) { return num % 2 != 0; });
+
+    // Erase the removed elements
+    numbers.erase(newEnd, numbers.end());
     ```
   - remove_copy
-    - Description: 
+    - Description:  used to create a new sequence that contains all elements from the input sequence except for those matching a specified value. It copies elements from the input range to the output range, excluding elements that compare equal to the specified value. It doesn't modify the original input range.
     - Example:
     ```c
+    std::vector<int> numbers = {1, 2, 3, 2, 4, 2, 5};
+    std::vector<int> result;
+
+    // Use std::remove_copy to copy elements from 'numbers' excluding the value 2
+    std::remove_copy(numbers.begin(), numbers.end(), std::back_inserter(result), 2);
     ```
   - remove_copy_if
-    - Description: 
+    - Description: used to create a new sequence that contains elements from the input sequence that do not satisfy a specified predicate.
     - Example:
     ```c
+    std::vector<int> numbers = {1, 2, 3, 4, 5, 6};
+    std::vector<int> result;
+
+    // Use std::remove_copy_if to copy even numbers from 'numbers' to 'result'
+    std::remove_copy_if(numbers.begin(), numbers.end(), std::back_inserter(result), [](int num) { return num % 2 == 0; });
+
     ```
 
 ## 10. Replacing algorithms
