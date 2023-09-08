@@ -336,9 +336,12 @@
 
 ## 10. Replacing algorithms
   - replace
-    - Description: 
+    - Description: used to replace all occurrences of a specified value with another value in a given range. It modifies the elements in place within the specified range.
     - Example:
     ```c
+    std::vector<int> numbers = {1, 2, 2, 3, 4, 2, 5};
+    // Replace all occurrences of 2 with 0 in the 'numbers' vector
+    std::replace(numbers.begin(), numbers.end(), 2, 0);
     ```
   - replace_if
     - Description: 
