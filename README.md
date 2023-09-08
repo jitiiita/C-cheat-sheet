@@ -347,18 +347,11 @@
     - Description: 
     - Example:
     ```c
-    ```
-  - replace_copy
-    - Description: 
-    - Example:
-    ```c
-    ```
-  - replace_copy_if
-    - Description: 
-    - Example:
-    ```c
-    ```
+    std::vector<int> numbers = {1, 2, 3, 4, 5, 6};
 
+    // Replace all even numbers with 0 in the 'numbers' vector
+    std::replace_if(numbers.begin(), numbers.end(), [](int num) { return num % 2 == 0; }, 0); // 1, 0, 3, 0, 5, 0
+    ```
 ## 11. for each
   - for_each
     - Description: Used to apply a specified function or functor to each element within a given range or container.
@@ -370,30 +363,52 @@
       ```
 
 ## 12. Numeric algorithms
-  - Accumulate
+  - accumulate
+    - Description: used to calculate the sum of all elements in a range. It starts with an initial value and accumulates each element in the range using addition (or a specified binary operation).
+    - Example:
+    ```c
+    int sum = std::accumulate(begin, end, initial_value);
+    ```
+  - adjacent_difference
+    - Description: Calculates the differences between adjacent elements in a range and stores the results in another range. It is useful for calculating differences or rates of change.
+    - Example:
+    ```c
+    std::adjacent_difference(begin, end, result_begin);
+    ```
+  - inner_product
+    - Description: calculates the inner product of two sequences. It multiplies corresponding elements from two input ranges and then accumulates the results.
+    - Example:
+    ```c
+    int result = std::inner_product(first1, last1, first2, initial_value);
+    ```
+  - partial_sum
+    - Description: Used to compute a sequence of partial sums of the elements in a given range. It calculates the cumulative sums of the elements and stores the results in another range, often in the same container as the original elements.
+    - Example:
+    ```c
+    std::vector<int> numbers = {1, 2, 3, 4, 5};
+    std::vector<int> partialSums(numbers.size());
+
+    // Calculate and store the partial sums in 'partialSums'
+    std::partial_sum(numbers.begin(), numbers.end(), partialSums.begin());
+
+    ```
+  - power
     - Description: 
     - Example:
     ```c
     ```
-  - Adjacent difference
-    - Description: 
+  - iota
+    - Description: Sequence of incrementing values to a range. It is often used to initialize a range with consecutive numbers.
     - Example:
     ```c
+    std::iota(begin, end, start_value);
     ```
-  - Inner product
-    - Description: 
+  - gcd and lcm
+    - Description: calculate the greatest common divisor (std::gcd) and the least common multiple (std::lcm) of two or more integers.
     - Example:
     ```c
-    ```
-  - Partial sum
-    - Description: 
-    - Example:
-    ```c
-    ```
-  - Power
-    - Description: 
-    - Example:
-    ```c
+    int gcd_result = std::gcd(a, b);
+    int lcm_result = std::lcm(a, b);
     ```
 
 ## 13. Generate algorithms
