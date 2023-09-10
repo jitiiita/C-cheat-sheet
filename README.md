@@ -449,58 +449,80 @@
 
 ## 14. Filling algorithms
   - fill
-    - Description: 
+    - Description: used to assign a specified value to all elements in a given range. 
     - Example:
     ```c
-    ```
-  - fill_n
-    - Description: 
-    - Example:
-    ```c
+    std::vector<int> numbers(5);
+
+    // Use std::fill to set all elements in the vector to 42
+    std::fill(numbers.begin(), numbers.end(), 42);
     ```
 
 ## 15. Copying algorithms
   - copy
-    - Description: 
+    - Description: used to copy elements from one range (container) to another.
     - Example:
     ```c
+    std::vector<int> source = {1, 2, 3, 4, 5};
+    std::vector<int> destination(5); // Destination vector with the same size as the source
+
+    // Use std::copy to copy elements from 'source' to 'destination'
+    std::copy(source.begin(), source.end(), destination.begin());
     ```
   - copy_backward
-    - Description: 
+    - Description: used to copy elements from one range (container) to another in reverse order.
     - Example:
     ```c
+    std::vector<int> source = {1, 2, 3, 4, 5};
+    std::vector<int> destination(5); // Destination vector with the same size as the source
+
+    // Use std::copy_backward to copy elements from 'source' to 'destination' in reverse order
+    std::copy_backward(source.begin(), source.end(), destination.end());
     ```
   - copy_n
-    - Description: 
+    - Description: used to copy a specified number of elements from one range (container) to another
     - Example:
     ```c
+    std::vector<int> source = {1, 2, 3, 4, 5};
+    std::vector<int> destination(3); // Destination vector with enough space for 3 elements
+
+    // Use std::copy_n to copy the first 3 elements from 'source' to 'destination'
+    std::copy_n(source.begin(), 3, destination.begin());
     ```
 
 ## 16. Heap algorithms
-  - push_heap
-    - Description: 
+  - make_heap
+    - Description: Converts a range of elements into a max heap or min heap.
     - Example:
     ```c
+    std::vector<int> vec = {3, 1, 4, 1, 5, 9, 2, 6, 5};
+    std::make_heap(vec.begin(), vec.end()); // Converts 'vec' into a max
+    ```
+  - push_heap
+    - Description: Inserts an element into a heap and maintains the heap property.
+    - Example:
+    ```c
+    vec.push_back(7);
+    std::push_heap(vec.begin(), vec.end());
     ```
   - pop_heap
-    - Description: 
+    - Description: Removes the top element (root) of a heap (which is the largest element in a max heap or the smallest element in a min heap) and moves it to the end of the range.
     - Example:
     ```c
-    ```
-  - make_heap
-    - Description: 
-    - Example:
-    ```c
+    std::pop_heap(vec.begin(), vec.end());
+    vec.pop_back(); // Remove the largest element from the heap
     ```
   - sort_heap
-    - Description: 
+    - Description: Sorts the elements of a heap in ascending order (for a max heap) or descending order (for a min heap).
     - Example:
     ```c
+    std::sort_heap(vec.begin(), vec.end()); // Sort 'vec' in ascending order
     ```
   - is_heap
-    - Description: 
+    - Description: Checks if a range is a valid heap.
     - Example:
     ```c
+    bool is_heap = std::is_heap(vec.begin(), vec.end()); // Checks if 'vec' is a heap
     ```
 
 ## 17. Counting algorithms
@@ -520,24 +542,43 @@
       ```
 ## 18. Randomizing algorithms
   - Random shuffle
-    - Description: 
+    - Description: used to randomly shuffle the elements of a sequence, such as an array, vector, or list. It rearranges the elements into a random order. 
     - Example:
     ```c
+    std::vector<int> numbers = {1, 2, 3, 4, 5};
+
+    // Create a random number generator using std::random_device
+    std::random_device rd;
+    std::default_random_engine rng(rd());
+
+    // Use std::shuffle to randomize the order of elements in 'numbers'
+    std::shuffle(numbers.begin(), numbers.end(), rng);
     ```
 
 ## 19. Comparing algorithms
   - Lexicographical compare
-    - Description: 
+    - Description: compare two sequences lexicographically. It determines whether one sequence is less than another based on the lexicographic order of their elements. This is often used to compare strings, character arrays, or any other sequence of comparable elements.
     - Example:
     ```c
+    std::string str1 = "apple";
+    std::string str2 = "banana";
+
+    bool result = std::lexicographical_compare(
+        str1.begin(), str1.end(),
+        str2.begin(), str2.end()
+    );
     ```
-  - Equal and mismatch
-    - Description: 
+## 20. Equal
+    - Description:  compares two ranges for equality. It checks whether all corresponding elements in two input ranges are equal. If all elements match, it returns true; otherwise, it returns false.
     - Example:
     ```c
+    std::vector<int> vec1 = {1, 2, 3, 4, 5};
+    std::vector<int> vec2 = {1, 2, 3, 4, 5};
+
+    bool result = std::equal(vec1.begin(), vec1.end(), vec2.begin()); //true
     ```
 
-## 20. Mismatch
+## 21. Mismatch
   - Mismatch
     - Description: Used to find the first pair of elements in two ranges that do not match
     - Example:
@@ -550,7 +591,7 @@
     // First mismatch: 3 in firstRange and 6 in secondRange.
     ```
 
-## 21. Set algorithms
+## 22. Set algorithms
   - includes
     - Description: Used to check whether one range of elements is a subset of another range. It determines whether all elements in the first range are also present in the second range. 
     - Example:
@@ -610,7 +651,7 @@
       // output will be: 1 2 3 4 5 6 7.
       ```
 
-## 22. Swapping algorithms
+## 23. Swapping algorithms
   - iter swap
     - Description: Used to swap the values of two elements pointed to by iterators.
     - Example: 
@@ -642,7 +683,7 @@
       // secondRange: 1 2 3
       ```
 
-## 23. transform
+## 24. transform
   - Transform
     - Description: used to apply a specified operation or function to each element within a given range or container and store the results in another range or container
     - Example:
@@ -655,7 +696,7 @@
       // output will be: 1 4 9 16 25.
       ```
 
-## 24. unique
+## 25. unique
   - unique
     - Description: Used to remove consecutive duplicate elements from a sorted range or container.
     - Example:
