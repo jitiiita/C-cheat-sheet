@@ -1,5 +1,5 @@
 
-# STL algorithms
+# Mastering C++ STL Algorithms: Unleash the Power of Your Code
 ## 1. Searching algorithms
   - find
     - Description: Searches for a specified element in a range defined by two iterators.
