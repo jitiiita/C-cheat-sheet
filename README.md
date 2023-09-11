@@ -29,7 +29,7 @@
     - Description: Search for the first occurrence of any element from a specified set of elements within a given range
     - Example:
       ```c
-      std::vector<int> vec = {1, 2, 3, 4, 5};
+      std::vector<int> vec = {1, 2, 4, 5, 6, 7};
       std::vector<int> targets = {3, 6, 7};
       auto it = std::find_first_of(vec.begin(), vec.end(), targets.begin(), targets.end());
       if (it != vec.end()) {
@@ -37,30 +37,40 @@
       } else {
           std::cout << "No element from 'targets' found in 'vec'" << std::endl;
       }
+      // First element from 'targets' found at position: 4
       ```
   - adjacent_find
-    - Description: Search for the first pair of adjacent elements in a specified range that satisfy a specified condition.
+    - Description: Search for the first pair of adjacent elements in a specified range that satisfy a specified condition. You can also provide a binary predicate function to
+      std::adjacent_find if you want to search for pairs that meet a specific condition other than equality. 
     - Example:
       ```c
+      std::vector<int> vec = {1, 2, 2, 3, 4, 4, 5};
       auto it = std::adjacent_find(vec.begin(), vec.end());
       if (it != vec.end()) {
           std::cout << "First pair of adjacent equal elements found at position: " << std::distance(vec.begin(), it) << std::endl;
       } else {
           std::cout << "No adjacent equal elements found in 'vec'" << std::endl;
       }
+      // 1 => 2,2
       ```
   - search
-      - Description: Searches for a subsequence within a range.
+      - Description: Used to search for a subsequence within a given range. It returns an iterator pointing to the first occurrence of the subsequence within the range, or the end() iterator if the subsequence is not found.
       - Example:
         ```c
-        std::vector<int> haystack = {1, 2, 3, 4, 5, 6};
-        std::vector<int> needle = {3, 4, 5};
-        auto it = std::search(haystack.begin(), haystack.end(), needle.begin(), needle.end());
-        if (it != haystack.end()) {
-            // Subsequence found
+        std::vector<int> mainSequence = {1, 2, 3, 4, 5, 6, 7, 8, 9};
+        std::vector<int> subSequence = {3, 4, 5};
+    
+        auto result = std::search(
+            mainSequence.begin(), mainSequence.end(),
+            subSequence.begin(), subSequence.end()
+        );
+    
+        if (result != mainSequence.end()) {
+            std::cout << "Subsequence found starting at index " << std::distance(mainSequence.begin(), result) << std::endl;
         } else {
-            // Subsequence not found
+            std::cout << "Subsequence not found in the main sequence." << std::endl;
         }
+        // std::search is a useful algorithm when you need to find a subsequence within a range or container. It can be applied to a variety of data types and use cases.
         ```
   - search_n
     - Description: Search for a specific subsequence of elements within a specified range.
