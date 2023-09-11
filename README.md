@@ -1,5 +1,15 @@
 
 # Mastering C++ STL Algorithms: Unleash the Power of Your Code
+  - Searching algorithms
+  - Sorting algorithms
+  - Copying algorithms
+  - Swapping algorithms
+  - Set algorithms
+  - Heap algorithms
+  - Transform
+
+
+
 ## 1. Searching algorithms
   - find
     - Description: Searches for a specified element in a range defined by two iterators.
