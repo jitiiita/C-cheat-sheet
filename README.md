@@ -23,6 +23,7 @@
             // Element not found
         }
         ```
+     - Time Complexity: O(n)
   - find_if
     - Description: Searches for the first element in a range that satisfies a specified condition.
     - Example:
@@ -35,6 +36,7 @@
           // Element not found
       }
       ```
+     - Time Complexity: O(n)
   - find_first_of
     - Description: Search for the first occurrence of any element from a specified set of elements within a given range
     - Example:
@@ -49,6 +51,7 @@
       }
       // First element from 'targets' found at position: 4
       ```
+     - Time Complexity: O(n)
   - adjacent_find
     - Description: Search for the first pair of adjacent elements in a specified range that satisfy a specified condition. You can also provide a binary predicate function to
       std::adjacent_find if you want to search for pairs that meet a specific condition other than equality. 
@@ -63,6 +66,7 @@
       }
       // 1 => 2,2
       ```
+     - Time Complexity: O(n)
   - search
       - Description: Used to search for a subsequence within a given range. It returns an iterator pointing to the first occurrence of the subsequence within the range, or the end() iterator if the subsequence is not found.
       - Example:
@@ -82,6 +86,7 @@
         }
         // std::search is a useful algorithm when you need to find a subsequence within a range or container. It can be applied to a variety of data types and use cases.
         ```
+      - Time Complexity: 
   - search_n
     - Description: Search for a specific subsequence of elements within a specified range.
     - Example:
@@ -98,7 +103,8 @@
       } else {
           std::cout << "No subsequence of " << consecutive_count << " consecutive " << target_value << " found in 'vec'" << std::endl;
       }
-      ``` 
+      ```
+    - Time Complexity: O(n)
   - binary_search
     - Description: Determines if a sorted range contains a specific element.
     - Example:
@@ -106,6 +112,7 @@
       std::vector<int> vec = {1, 2, 3, 4, 5};
       bool found = std::binary_search(vec.begin(), vec.end(), 3);
       ```
+    - Time Complexity: O(n)
   - equal_range
     - Description: Find a range of elements in a sorted sequence that match a specified value or satisfy a given binary predicate
     - Example:
@@ -114,6 +121,7 @@
       auto range = std::equal_range(vec.begin(), vec.end(), 3);
       std::cout << "Occurrences of 3 in the range: [" << std::distance(vec.begin(), range.first) << ", " << std::distance(vec.begin(), range.second) << ")" << std::endl;
       ```
+    - Time Complexity: O(n)
   - lower_bound
     - Description: Find the first element in a sorted sequence that is not less than a specified value or that satisfies a given binary predicate
     - Example:
@@ -129,6 +137,7 @@
           std::cout << "No element not less than 4 found in 'vec'" << std::endl;
       }
       ```
+    - Time Complexity: O(n)
   - upper_bound
     - Description: Find the first element in a sorted sequence that is greater than a specified value or that satisfies a given binary predicate.
     - Example:
@@ -144,7 +153,7 @@
           std::cout << "No element greater than 4 found in 'vec'" << std::endl;
       }
       ```
-
+    - Time Complexity: O(n)
 ## 2. Sorting algorithms
   - sort
     - Description: Sort elements in a given range
@@ -157,6 +166,7 @@
       vector<int> v = {1,2,3,4,5,6,7,8,9};
       sort(v.begin(), v.end(), compare);
       ```
+    - Time Complexity: O(n)
   - stable_sort
     - Description: Sort elements in a given range, just like std::sort.
     - Example:
@@ -165,6 +175,7 @@
       // Sort the elements in ascending order using std::stable_sort
       std::stable_sort(numbers.begin(), numbers.end());
       ```
+      - Time Complexity: O(n)
 
 ## 3. Reversing
   - reverse
@@ -184,6 +195,7 @@
       // Create a reversed copy of the 'original' and store it in 'reversed_copy'
       std::reverse_copy(original.begin(), original.end(), reversed_copy.begin());
       ```
+    - Time Complexity: O(n)
 ## 4. Rotating
   - rotate
     - Description: Used to rotate the elements in a specified range
@@ -198,6 +210,7 @@
       // Rotate the elements so that '3' becomes the new starting element
       std::rotate(numbers.begin(), std::next(numbers.begin(), 2), numbers.end());
       ```
+    - Time Complexity: O(n)
   - rotate_copy
     - Description: copying elements from a source range to a destination range with a rotation applied by using a combination of STL algorithms like std::copy, std::rotate, and iterators.
     - Example:
@@ -211,6 +224,7 @@
       // Perform the rotation and copy to the destination
       std::rotate_copy(source.begin(), source.begin() + rotate_position, source.end(), destination.begin());
       ```
+    - Time Complexity: O(n)
 ## 5. Minimum & Maximum
   - Min
     - Description: Used to determine the minimum value among two or more values.
@@ -222,6 +236,7 @@
     // Find the minimum of x and y
     int minValue = std::min(x, y); // 3
     ```
+  - Time Complexity: O(n)
   - Max
     - Description: used to determine the maximum value among two or more values
     - Example:
@@ -232,6 +247,7 @@
     // Find the minimum of x and y
     int minValue = std::max(x, y); // 5
     ```
+    - Time Complexity: O(n)
   - min_Element
     - Description: used to find the smallest element in a given range
     - Example:
@@ -241,6 +257,7 @@
     // Find the smallest element in the 'numbers' vector
     auto minElement = std::min_element(numbers.begin(), numbers.end()); // Smallest element: 1
     ```
+  - Time Complexity:
   - max_Element
     - Description: used to find the largest element in a given range.
     - Example:
@@ -250,7 +267,7 @@
     // Find the largest element in the 'numbers' vector
     auto maxElement = std::max_element(numbers.begin(), numbers.end()); // Largest element: 8
     ```
-
+  - Time Complexity:
 ## 6. Merge
   - Merge
     - Description: used to merge two sorted ranges into a single sorted range. 
@@ -264,6 +281,7 @@
     std::merge(firstRange.begin(), firstRange.end(), secondRange.begin(), secondRange.end(), mergedResult.begin());
     // 1 2 3 4 5 6 7 8.
     ```
+  - Time Complexity:
   - In-place merge
     - Description: This algorithm reorders the elements in a single sorted range in such a way that they form a merged, sorted range within the original range.
     - Example:
@@ -278,6 +296,7 @@
     std::inplace_merge(numbers.begin(), numbers.begin() + 5, numbers.end());
     //1 1 2 3 3 4 5 5 5 6 9 
     ```
+- Time Complexity:
 
 ## 7. nth element
   - Nth element
