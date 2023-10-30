@@ -104,7 +104,7 @@
           std::cout << "No subsequence of " << consecutive_count << " consecutive " << target_value << " found in 'vec'" << std::endl;
       }
       ```
-    - Time Complexity: O(n)
+    - Time Complexity: 
   - binary_search
     - Description: Determines if a sorted range contains a specific element.
     - Example:
@@ -112,7 +112,7 @@
       std::vector<int> vec = {1, 2, 3, 4, 5};
       bool found = std::binary_search(vec.begin(), vec.end(), 3);
       ```
-    - Time Complexity: O(n)
+    - Time Complexity: log(n)
   - equal_range
     - Description: Find a range of elements in a sorted sequence that match a specified value or satisfy a given binary predicate
     - Example:
@@ -121,7 +121,7 @@
       auto range = std::equal_range(vec.begin(), vec.end(), 3);
       std::cout << "Occurrences of 3 in the range: [" << std::distance(vec.begin(), range.first) << ", " << std::distance(vec.begin(), range.second) << ")" << std::endl;
       ```
-    - Time Complexity: O(n)
+    - Time Complexity: log(n)
   - lower_bound
     - Description: Find the first element in a sorted sequence that is not less than a specified value or that satisfies a given binary predicate
     - Example:
@@ -137,7 +137,7 @@
           std::cout << "No element not less than 4 found in 'vec'" << std::endl;
       }
       ```
-    - Time Complexity: O(n)
+    - Time Complexity: log(n)
   - upper_bound
     - Description: Find the first element in a sorted sequence that is greater than a specified value or that satisfies a given binary predicate.
     - Example:
@@ -153,7 +153,7 @@
           std::cout << "No element greater than 4 found in 'vec'" << std::endl;
       }
       ```
-    - Time Complexity: O(n)
+    - Time Complexity: log(n)
 ## 2. Sorting algorithms
   - sort
     - Description: Sort elements in a given range
@@ -166,7 +166,7 @@
       vector<int> v = {1,2,3,4,5,6,7,8,9};
       sort(v.begin(), v.end(), compare);
       ```
-    - Time Complexity: O(n)
+    - Time Complexity: nlog(n)
   - stable_sort
     - Description: Sort elements in a given range, just like std::sort.
     - Example:
@@ -175,7 +175,7 @@
       // Sort the elements in ascending order using std::stable_sort
       std::stable_sort(numbers.begin(), numbers.end());
       ```
-      - Time Complexity: O(n)
+      - Time Complexity: nlog(n)
 
 ## 3. Reversing
   - reverse
@@ -195,7 +195,7 @@
       // Create a reversed copy of the 'original' and store it in 'reversed_copy'
       std::reverse_copy(original.begin(), original.end(), reversed_copy.begin());
       ```
-    - Time Complexity: O(n)
+    - Time Complexity:
 ## 4. Rotating
   - rotate
     - Description: Used to rotate the elements in a specified range
@@ -210,7 +210,7 @@
       // Rotate the elements so that '3' becomes the new starting element
       std::rotate(numbers.begin(), std::next(numbers.begin(), 2), numbers.end());
       ```
-    - Time Complexity: O(n)
+    - Time Complexity: 
   - rotate_copy
     - Description: copying elements from a source range to a destination range with a rotation applied by using a combination of STL algorithms like std::copy, std::rotate, and iterators.
     - Example:
@@ -224,7 +224,7 @@
       // Perform the rotation and copy to the destination
       std::rotate_copy(source.begin(), source.begin() + rotate_position, source.end(), destination.begin());
       ```
-    - Time Complexity: O(n)
+    - Time Complexity: 
 ## 5. Minimum & Maximum
   - Min
     - Description: Used to determine the minimum value among two or more values.
@@ -236,7 +236,7 @@
     // Find the minimum of x and y
     int minValue = std::min(x, y); // 3
     ```
-  - Time Complexity: O(n)
+    - Time Complexity:
   - Max
     - Description: used to determine the maximum value among two or more values
     - Example:
@@ -247,7 +247,7 @@
     // Find the minimum of x and y
     int minValue = std::max(x, y); // 5
     ```
-    - Time Complexity: O(n)
+    - Time Complexity:
   - min_Element
     - Description: used to find the smallest element in a given range
     - Example:
@@ -257,7 +257,7 @@
     // Find the smallest element in the 'numbers' vector
     auto minElement = std::min_element(numbers.begin(), numbers.end()); // Smallest element: 1
     ```
-  - Time Complexity:
+    - Time Complexity:
   - max_Element
     - Description: used to find the largest element in a given range.
     - Example:
@@ -267,7 +267,7 @@
     // Find the largest element in the 'numbers' vector
     auto maxElement = std::max_element(numbers.begin(), numbers.end()); // Largest element: 8
     ```
-  - Time Complexity:
+    - Time Complexity:
 ## 6. Merge
   - Merge
     - Description: used to merge two sorted ranges into a single sorted range. 
@@ -281,7 +281,7 @@
     std::merge(firstRange.begin(), firstRange.end(), secondRange.begin(), secondRange.end(), mergedResult.begin());
     // 1 2 3 4 5 6 7 8.
     ```
-  - Time Complexity:
+    - Time Complexity:
   - In-place merge
     - Description: This algorithm reorders the elements in a single sorted range in such a way that they form a merged, sorted range within the original range.
     - Example:
@@ -296,7 +296,7 @@
     std::inplace_merge(numbers.begin(), numbers.begin() + 5, numbers.end());
     //1 1 2 3 3 4 5 5 5 6 9 
     ```
-- Time Complexity:
+    - Time Complexity:
 
 ## 7. nth element
   - Nth element
@@ -307,6 +307,7 @@
       // Find the 3rd smallest element using std::nth_element
       std::nth_element(numbers.begin(), numbers.begin() + 2, numbers.end()); //3
       ```
+    - Time Complexity:
 
 ## 8. Partition and Stable partition
   - partition and stable partition
@@ -317,6 +318,7 @@
     auto isEven = [](int x) { return x % 2 == 0; };
     std::partition(numbers.begin(), numbers.end(), isEven);
     ```
+    - Time Complexity:
   - stable partition
     - Description: Separates elements into two groups based on a condition.
     - Example:
@@ -325,7 +327,7 @@
       auto isEven = [](int x) { return x % 2 == 0; };
       std::stable_partition(numbers.begin(), numbers.end(), isEven);
       ```
-
+    - Time Complexity:
 ## 9. Removing algorithms
   - remove
     - Description: Used to remove all elements equal to a specified value from a range. It does not actually erase the elements from the container but rather moves them to the end of the range and returns an iterator pointing to the new end.
@@ -339,6 +341,7 @@
     // Erase the removed elements
     numbers.erase(newEnd, numbers.end());
     ```
+    - Time Complexity:
   - remove_if
     - Description: used to remove elements from a range that satisfy a certain predicate or condition.
     - Example:
@@ -351,6 +354,7 @@
     // Erase the removed elements
     numbers.erase(newEnd, numbers.end());
     ```
+    - Time Complexity:
   - remove_copy
     - Description:  used to create a new sequence that contains all elements from the input sequence except for those matching a specified value. It copies elements from the input range to the output range, excluding elements that compare equal to the specified value. It doesn't modify the original input range.
     - Example:
@@ -361,6 +365,7 @@
     // Use std::remove_copy to copy elements from 'numbers' excluding the value 2
     std::remove_copy(numbers.begin(), numbers.end(), std::back_inserter(result), 2);
     ```
+    - Time Complexity:
   - remove_copy_if
     - Description: used to create a new sequence that contains elements from the input sequence that do not satisfy a specified predicate.
     - Example:
@@ -370,8 +375,8 @@
 
     // Use std::remove_copy_if to copy even numbers from 'numbers' to 'result'
     std::remove_copy_if(numbers.begin(), numbers.end(), std::back_inserter(result), [](int num) { return num % 2 == 0; });
-
     ```
+    - Time Complexity:
 
 ## 10. Replacing algorithms
   - replace
@@ -391,6 +396,7 @@
     // Replace all even numbers with 0 in the 'numbers' vector
     std::replace_if(numbers.begin(), numbers.end(), [](int num) { return num % 2 == 0; }, 0); // 1, 0, 3, 0, 5, 0
     ```
+    - Time Complexity:
 ## 11. for each
   - for_each
     - Description: Used to apply a specified function or functor to each element within a given range or container.
@@ -400,6 +406,7 @@
       // Use a lambda function to square and print each element
       std::for_each(numbers.begin(), numbers.end(), [](int x) { std::cout << x * x << " "; });
       ```
+      - Time Complexity:
 
 ## 12. Numeric algorithms
   - accumulate
@@ -408,18 +415,21 @@
     ```c
     int sum = std::accumulate(begin, end, initial_value);
     ```
+    - Time Complexity:
   - adjacent_difference
     - Description: Calculates the differences between adjacent elements in a range and stores the results in another range. It is useful for calculating differences or rates of change.
     - Example:
     ```c
     std::adjacent_difference(begin, end, result_begin);
     ```
+    - Time Complexity:
   - inner_product
     - Description: calculates the inner product of two sequences. It multiplies corresponding elements from two input ranges and then accumulates the results.
     - Example:
     ```c
     int result = std::inner_product(first1, last1, first2, initial_value);
     ```
+    - Time Complexity:
   - partial_sum
     - Description: Used to compute a sequence of partial sums of the elements in a given range. It calculates the cumulative sums of the elements and stores the results in another range, often in the same container as the original elements.
     - Example:
@@ -429,8 +439,8 @@
 
     // Calculate and store the partial sums in 'partialSums'
     std::partial_sum(numbers.begin(), numbers.end(), partialSums.begin()); //1 3 6 10 15
-
     ```
+    - Time Complexity:
   - power
     - Description: to calculate the power of a number:
     - Example:
@@ -441,6 +451,7 @@
     // Calculate 2^3 using std::pow
     double result = std::pow(base, exponent);
     ```
+    - Time Complexity:
   - iota
     - Description: Sequence of incrementing values to a range. It is often used to initialize a range with consecutive numbers.
     - Example:
@@ -449,6 +460,7 @@
     // Use std::iota to assign consecutive values starting from 1
     std::iota(numbers.begin(), numbers.end(), 1); // 1, 2, 3, 4, 5
     ```
+    - Time Complexity:
   - gcd and lcm
     - Description: calculate the greatest common divisor (std::gcd) and the least common multiple (std::lcm) of two or more integers.
     - Example:
@@ -456,6 +468,7 @@
     int gcd_result = std::gcd(a, b);
     int lcm_result = std::lcm(a, b);
     ```
+    - Time Complexity:
 
 ## 13. Generate algorithms
   - generate
